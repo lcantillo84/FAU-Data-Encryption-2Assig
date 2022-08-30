@@ -1,0 +1,60 @@
+<h1 class="text-center">Encrypt-Decrypt with AES</h1>
+<br>
+<div>
+  <div class="row">
+    <div class="col-sm-6">
+      <button type="button" class="btn btn-primary btn-lg btn-block">
+        Encryption
+      </button>
+      <br>
+      <div class="form-group">
+        <label for="txtTextToConvert">Plain Text</label>
+        <input type="text" class="form-control" placeholder="Enter text you want to encrypt"[(ngModel)]="text">
+      </div>
+
+      <div class="form-group">
+        <label for="txtPassword">Key</label>
+        <input type="password" class="form-control" placeholder="Enter encryption password" [(ngModel)]="secrectkey">
+      </div>
+      <textarea class="form-control" readonly rows="3">{{textEncrypt}}</textarea>
+      <br>
+      <button type="button" class="btn btn-success float-right" (click)="encrypt()">Encrypt</button>
+    </div>
+    <div class="col-sm-6">
+      <button type="button" class="btn btn-dark btn-lg btn-block">
+        Decryption
+      </button>
+      <br>
+
+      <div class="form-group">
+        <label for="txtTextToConvert">Encrypted Text</label>
+        <input type="text" class="form-control" placeholder="Enter text you want to decrypt" [(ngModel)]="encryptText">
+        <textarea class="form-control mt-3" readonly rows="3">{{textDecrypt}}</textarea>
+        <br>
+        <button type="button" class="btn btn-success float-right" (click)="decrypt()">Decrypt</button>
+      </div>
+        <div class="form-group mt-5">
+          <p> <strong> We will use the same key *</strong></p>
+          <div class="row">
+
+            <div class="col-6">
+             <button type="button" class="btn btn-success float-left mb-3" (click)="showKey()">Show Key</button>
+            </div>
+            <div class="col-6 tex-center">
+              <textarea class="form-control" readonly rows="1">{{showKeyDecr}}</textarea>
+            </div>
+          </div>
+        </div>
+      <!-- <div class="form-group">
+        <label for="key">Key</label>
+        <input type="key" class="form-control" placeholder="Enter the same decryption password" [(ngModel)]="secrectkey">
+      </div> -->
+
+    </div>
+  </div>
+</div>
+<!-- <mat-tab-group>
+  <mat-tab label="First"> Content 1 </mat-tab>
+  <mat-tab label="Second"> Content 2 </mat-tab>
+  <mat-tab label="Third"> Content 3 </mat-tab>
+</mat-tab-group> -->
